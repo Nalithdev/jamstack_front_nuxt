@@ -5,7 +5,7 @@ const {findOne} = useStrapi4()
 const route = useRoute()
 
 const {data: character, pending} = useAsyncData('character', () =>
-    findOne<{ data: Character[] }>(`player/${route.params.slug}`)
+    findOne<{ data: Character[] }>(`characters/${route.params.slug}`)
 )
 
 </script>

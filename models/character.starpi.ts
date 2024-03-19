@@ -23,3 +23,9 @@ export interface CharactersResponse {
     data : Character[]
     meta : Meta
 }
+
+export interface BackCharactersResponse {
+    data : Character[]
+    meta : Meta
+}
+
