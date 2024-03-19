@@ -4,6 +4,7 @@ export interface Character{
     id: number;
     name: string;
     age: bigint;
+    slug: string;
     race: string;
     image: Image;
     nation: string;

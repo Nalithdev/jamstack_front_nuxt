@@ -6,17 +6,24 @@ const {find} = useStrapi()
 const {data, pending, error} = await useAsyncData('characters', async () => {
   return await find<CharactersResponse>('characters', {
     populate: '*'
-  })
+  }).then(res => res.data)
 })
 </script>
-
-
 <template>
-
-  <p>Bonjour</p>
   <pre>{{ data }}</pre>
 
+  <template v-if="pending">
+    ça charge
+  </template>
+  <template v-else>
+    <p>Bonjour</p>
+    <div v-for="character in data" :key="character.slug">
+      <a :href="`/characters/${character.slug}`" :key="character.id">{{ character.name }}</a>
+    </div>
 
+
+
+  </template>
 </template>
 
 
