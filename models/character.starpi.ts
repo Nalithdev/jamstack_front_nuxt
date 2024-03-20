@@ -6,8 +6,8 @@ export interface Character{
     age: bigint;
     slug: string;
     race: string;
+    nationality: string;
     image: Image;
-    nation: string;
     published_at: Date;
     created_at: Date;
     updated_at: Date;
